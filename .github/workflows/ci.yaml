@@ -14,7 +14,7 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -25,10 +25,13 @@ jobs:
           node-version: '18'
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          cd app/api
+          npm install
 
       - name: Run unit tests
         env:
           MONGO_URL: mongodb://localhost:27017/testdb
         run: |
-          npx mocha ./api/test/trainee.js
+          cd app/api
+          npx mocha test/trainee.js
