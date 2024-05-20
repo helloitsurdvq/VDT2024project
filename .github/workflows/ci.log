@@ -1,0 +1,307 @@
+2024-05-20T16:31:15.4908439Z Current runner version: '2.316.1'
+2024-05-20T16:31:15.4931738Z ##[group]Operating System
+2024-05-20T16:31:15.4932766Z Ubuntu
+2024-05-20T16:31:15.4933314Z 22.04.4
+2024-05-20T16:31:15.4933643Z LTS
+2024-05-20T16:31:15.4935035Z ##[endgroup]
+2024-05-20T16:31:15.4935522Z ##[group]Runner Image
+2024-05-20T16:31:15.4936236Z Image: ubuntu-22.04
+2024-05-20T16:31:15.4936967Z Version: 20240516.1.0
+2024-05-20T16:31:15.4938281Z Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20240516.1/images/ubuntu/Ubuntu2204-Readme.md
+2024-05-20T16:31:15.4939781Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20240516.1
+2024-05-20T16:31:15.4940706Z ##[endgroup]
+2024-05-20T16:31:15.4941134Z ##[group]Runner Image Provisioner
+2024-05-20T16:31:15.4941683Z 2.0.369.1
+2024-05-20T16:31:15.4942029Z ##[endgroup]
+2024-05-20T16:31:15.4942994Z ##[group]GITHUB_TOKEN Permissions
+2024-05-20T16:31:15.4944647Z Contents: read
+2024-05-20T16:31:15.4945087Z Metadata: read
+2024-05-20T16:31:15.4945730Z Packages: read
+2024-05-20T16:31:15.4946211Z ##[endgroup]
+2024-05-20T16:31:15.4949284Z Secret source: Actions
+2024-05-20T16:31:15.4949887Z Prepare workflow directory
+2024-05-20T16:31:15.5561050Z Prepare all required actions
+2024-05-20T16:31:15.5716209Z Getting action download info
+2024-05-20T16:31:15.7852378Z Download action repository 'actions/checkout@v2' (SHA:ee0669bd1cc54295c223e0bb666b733df41de1c5)
+2024-05-20T16:31:15.9268619Z Download action repository 'actions/setup-node@v3' (SHA:1a4442cacd436585916779262731d5b162bc6ec7)
+2024-05-20T16:31:16.1226528Z Complete job name: test
+2024-05-20T16:31:16.2297913Z ##[group]Run actions/checkout@v2
+2024-05-20T16:31:16.2298565Z with:
+2024-05-20T16:31:16.2299129Z   repository: helloitsurdvq/VDT2024project
+2024-05-20T16:31:16.2299897Z   token: ***
+2024-05-20T16:31:16.2300356Z   ssh-strict: true
+2024-05-20T16:31:16.2300903Z   persist-credentials: true
+2024-05-20T16:31:16.2301371Z   clean: true
+2024-05-20T16:31:16.2301788Z   fetch-depth: 1
+2024-05-20T16:31:16.2302286Z   lfs: false
+2024-05-20T16:31:16.2302672Z   submodules: false
+2024-05-20T16:31:16.2303134Z   set-safe-directory: true
+2024-05-20T16:31:16.2303685Z ##[endgroup]
+2024-05-20T16:31:16.4763781Z Syncing repository: helloitsurdvq/VDT2024project
+2024-05-20T16:31:16.4765879Z ##[group]Getting Git version info
+2024-05-20T16:31:16.4766783Z Working directory is '/home/runner/work/VDT2024project/VDT2024project'
+2024-05-20T16:31:16.4767987Z [command]/usr/bin/git version
+2024-05-20T16:31:16.4824468Z git version 2.45.1
+2024-05-20T16:31:16.4847909Z ##[endgroup]
+2024-05-20T16:31:16.4867626Z Temporarily overriding HOME='/home/runner/work/_temp/b0a42b65-4ac2-4fff-b180-76a559b83d69' before making global git config changes
+2024-05-20T16:31:16.4870047Z Adding repository directory to the temporary git global config as a safe directory
+2024-05-20T16:31:16.4872465Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/VDT2024project/VDT2024project
+2024-05-20T16:31:16.4918020Z Deleting the contents of '/home/runner/work/VDT2024project/VDT2024project'
+2024-05-20T16:31:16.4922522Z ##[group]Initializing the repository
+2024-05-20T16:31:16.4927743Z [command]/usr/bin/git init /home/runner/work/VDT2024project/VDT2024project
+2024-05-20T16:31:16.5022712Z hint: Using 'master' as the name for the initial branch. This default branch name
+2024-05-20T16:31:16.5023831Z hint: is subject to change. To configure the initial branch name to use in all
+2024-05-20T16:31:16.5025466Z hint: of your new repositories, which will suppress this warning, call:
+2024-05-20T16:31:16.5026795Z hint:
+2024-05-20T16:31:16.5027621Z hint: 	git config --global init.defaultBranch <name>
+2024-05-20T16:31:16.5028538Z hint:
+2024-05-20T16:31:16.5029493Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2024-05-20T16:31:16.5030551Z hint: 'development'. The just-created branch can be renamed via this command:
+2024-05-20T16:31:16.5031304Z hint:
+2024-05-20T16:31:16.5031802Z hint: 	git branch -m <name>
+2024-05-20T16:31:16.5032591Z Initialized empty Git repository in /home/runner/work/VDT2024project/VDT2024project/.git/
+2024-05-20T16:31:16.5036436Z [command]/usr/bin/git remote add origin https://github.com/helloitsurdvq/VDT2024project
+2024-05-20T16:31:16.5080258Z ##[endgroup]
+2024-05-20T16:31:16.5081131Z ##[group]Disabling automatic garbage collection
+2024-05-20T16:31:16.5084427Z [command]/usr/bin/git config --local gc.auto 0
+2024-05-20T16:31:16.5121345Z ##[endgroup]
+2024-05-20T16:31:16.5122253Z ##[group]Setting up auth
+2024-05-20T16:31:16.5127750Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2024-05-20T16:31:16.5168917Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2024-05-20T16:31:16.5538075Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2024-05-20T16:31:16.5577852Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2024-05-20T16:31:16.5844533Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2024-05-20T16:31:16.5893587Z ##[endgroup]
+2024-05-20T16:31:16.5894907Z ##[group]Fetching the repository
+2024-05-20T16:31:16.5903142Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +5cf3489b971f3cf042eedc305b10378e99b56c09:refs/remotes/origin/main
+2024-05-20T16:31:16.9717971Z remote: Enumerating objects: 62, done.        
+2024-05-20T16:31:16.9719570Z remote: Counting objects:   1% (1/62)        
+2024-05-20T16:31:16.9720604Z remote: Counting objects:   3% (2/62)        
+2024-05-20T16:31:16.9721411Z remote: Counting objects:   4% (3/62)        
+2024-05-20T16:31:16.9722156Z remote: Counting objects:   6% (4/62)        
+2024-05-20T16:31:16.9722932Z remote: Counting objects:   8% (5/62)        
+2024-05-20T16:31:16.9723674Z remote: Counting objects:   9% (6/62)        
+2024-05-20T16:31:16.9724268Z remote: Counting objects:  11% (7/62)        
+2024-05-20T16:31:16.9724911Z remote: Counting objects:  12% (8/62)        
+2024-05-20T16:31:16.9725520Z remote: Counting objects:  14% (9/62)        
+2024-05-20T16:31:16.9726131Z remote: Counting objects:  16% (10/62)        
+2024-05-20T16:31:16.9726791Z remote: Counting objects:  17% (11/62)        
+2024-05-20T16:31:16.9727402Z remote: Counting objects:  19% (12/62)        
+2024-05-20T16:31:16.9728275Z remote: Counting objects:  20% (13/62)        
+2024-05-20T16:31:16.9729202Z remote: Counting objects:  22% (14/62)        
+2024-05-20T16:31:16.9729829Z remote: Counting objects:  24% (15/62)        
+2024-05-20T16:31:16.9730429Z remote: Counting objects:  25% (16/62)        
+2024-05-20T16:31:16.9731071Z remote: Counting objects:  27% (17/62)        
+2024-05-20T16:31:16.9731673Z remote: Counting objects:  29% (18/62)        
+2024-05-20T16:31:16.9732291Z remote: Counting objects:  30% (19/62)        
+2024-05-20T16:31:16.9732923Z remote: Counting objects:  32% (20/62)        
+2024-05-20T16:31:16.9733521Z remote: Counting objects:  33% (21/62)        
+2024-05-20T16:31:16.9734124Z remote: Counting objects:  35% (22/62)        
+2024-05-20T16:31:16.9734737Z remote: Counting objects:  37% (23/62)        
+2024-05-20T16:31:16.9735333Z remote: Counting objects:  38% (24/62)        
+2024-05-20T16:31:16.9735945Z remote: Counting objects:  40% (25/62)        
+2024-05-20T16:31:16.9736558Z remote: Counting objects:  41% (26/62)        
+2024-05-20T16:31:16.9737146Z remote: Counting objects:  43% (27/62)        
+2024-05-20T16:31:16.9737740Z remote: Counting objects:  45% (28/62)        
+2024-05-20T16:31:16.9738385Z remote: Counting objects:  46% (29/62)        
+2024-05-20T16:31:16.9738931Z remote: Counting objects:  48% (30/62)        
+2024-05-20T16:31:16.9739528Z remote: Counting objects:  50% (31/62)        
+2024-05-20T16:31:16.9740169Z remote: Counting objects:  51% (32/62)        
+2024-05-20T16:31:16.9740991Z remote: Counting objects:  53% (33/62)        
+2024-05-20T16:31:16.9741571Z remote: Counting objects:  54% (34/62)        
+2024-05-20T16:31:16.9742230Z remote: Counting objects:  56% (35/62)        
+2024-05-20T16:31:16.9742814Z remote: Counting objects:  58% (36/62)        
+2024-05-20T16:31:16.9743390Z remote: Counting objects:  59% (37/62)        
+2024-05-20T16:31:16.9744033Z remote: Counting objects:  61% (38/62)        
+2024-05-20T16:31:16.9744598Z remote: Counting objects:  62% (39/62)        
+2024-05-20T16:31:16.9745178Z remote: Counting objects:  64% (40/62)        
+2024-05-20T16:31:16.9745847Z remote: Counting objects:  66% (41/62)        
+2024-05-20T16:31:16.9746394Z remote: Counting objects:  67% (42/62)        
+2024-05-20T16:31:16.9746977Z remote: Counting objects:  69% (43/62)        
+2024-05-20T16:31:16.9747637Z remote: Counting objects:  70% (44/62)        
+2024-05-20T16:31:16.9748180Z remote: Counting objects:  72% (45/62)        
+2024-05-20T16:31:16.9748765Z remote: Counting objects:  74% (46/62)        
+2024-05-20T16:31:16.9749424Z remote: Counting objects:  75% (47/62)        
+2024-05-20T16:31:16.9749980Z remote: Counting objects:  77% (48/62)        
+2024-05-20T16:31:16.9750561Z remote: Counting objects:  79% (49/62)        
+2024-05-20T16:31:16.9751219Z remote: Counting objects:  80% (50/62)        
+2024-05-20T16:31:16.9751762Z remote: Counting objects:  82% (51/62)        
+2024-05-20T16:31:16.9752338Z remote: Counting objects:  83% (52/62)        
+2024-05-20T16:31:16.9753175Z remote: Counting objects:  85% (53/62)        
+2024-05-20T16:31:16.9753784Z remote: Counting objects:  87% (54/62)        
+2024-05-20T16:31:16.9754348Z remote: Counting objects:  88% (55/62)        
+2024-05-20T16:31:16.9755005Z remote: Counting objects:  90% (56/62)        
+2024-05-20T16:31:16.9755584Z remote: Counting objects:  91% (57/62)        
+2024-05-20T16:31:16.9756153Z remote: Counting objects:  93% (58/62)        
+2024-05-20T16:31:16.9756815Z remote: Counting objects:  95% (59/62)        
+2024-05-20T16:31:16.9757405Z remote: Counting objects:  96% (60/62)        
+2024-05-20T16:31:16.9758011Z remote: Counting objects:  98% (61/62)        
+2024-05-20T16:31:16.9758665Z remote: Counting objects: 100% (62/62)        
+2024-05-20T16:31:16.9759306Z remote: Counting objects: 100% (62/62), done.        
+2024-05-20T16:31:16.9759932Z remote: Compressing objects:   2% (1/44)        
+2024-05-20T16:31:16.9760735Z remote: Compressing objects:   4% (2/44)        
+2024-05-20T16:31:16.9761393Z remote: Compressing objects:   6% (3/44)        
+2024-05-20T16:31:16.9762009Z remote: Compressing objects:   9% (4/44)        
+2024-05-20T16:31:16.9762679Z remote: Compressing objects:  11% (5/44)        
+2024-05-20T16:31:16.9763319Z remote: Compressing objects:  13% (6/44)        
+2024-05-20T16:31:16.9763936Z remote: Compressing objects:  15% (7/44)        
+2024-05-20T16:31:16.9764598Z remote: Compressing objects:  18% (8/44)        
+2024-05-20T16:31:16.9765231Z remote: Compressing objects:  20% (9/44)        
+2024-05-20T16:31:16.9765857Z remote: Compressing objects:  22% (10/44)        
+2024-05-20T16:31:16.9766536Z remote: Compressing objects:  25% (11/44)        
+2024-05-20T16:31:16.9767188Z remote: Compressing objects:  27% (12/44)        
+2024-05-20T16:31:16.9767820Z remote: Compressing objects:  29% (13/44)        
+2024-05-20T16:31:16.9768627Z remote: Compressing objects:  31% (14/44)        
+2024-05-20T16:31:16.9769267Z remote: Compressing objects:  34% (15/44)        
+2024-05-20T16:31:16.9769900Z remote: Compressing objects:  36% (16/44)        
+2024-05-20T16:31:16.9770620Z remote: Compressing objects:  38% (17/44)        
+2024-05-20T16:31:16.9771213Z remote: Compressing objects:  40% (18/44)        
+2024-05-20T16:31:16.9771848Z remote: Compressing objects:  43% (19/44)        
+2024-05-20T16:31:16.9772570Z remote: Compressing objects:  45% (20/44)        
+2024-05-20T16:31:16.9773152Z remote: Compressing objects:  47% (21/44)        
+2024-05-20T16:31:16.9773778Z remote: Compressing objects:  50% (22/44)        
+2024-05-20T16:31:16.9774691Z remote: Compressing objects:  52% (23/44)        
+2024-05-20T16:31:16.9775284Z remote: Compressing objects:  54% (24/44)        
+2024-05-20T16:31:16.9775933Z remote: Compressing objects:  56% (25/44)        
+2024-05-20T16:31:16.9776622Z remote: Compressing objects:  59% (26/44)        
+2024-05-20T16:31:16.9777201Z remote: Compressing objects:  61% (27/44)        
+2024-05-20T16:31:16.9777873Z remote: Compressing objects:  63% (28/44)        
+2024-05-20T16:31:16.9778570Z remote: Compressing objects:  65% (29/44)        
+2024-05-20T16:31:16.9779159Z remote: Compressing objects:  68% (30/44)        
+2024-05-20T16:31:16.9779815Z remote: Compressing objects:  70% (31/44)        
+2024-05-20T16:31:16.9780520Z remote: Compressing objects:  72% (32/44)        
+2024-05-20T16:31:16.9781104Z remote: Compressing objects:  75% (33/44)        
+2024-05-20T16:31:16.9781738Z remote: Compressing objects:  77% (34/44)        
+2024-05-20T16:31:16.9782430Z remote: Compressing objects:  79% (35/44)        
+2024-05-20T16:31:16.9783074Z remote: Compressing objects:  81% (36/44)        
+2024-05-20T16:31:16.9783655Z remote: Compressing objects:  84% (37/44)        
+2024-05-20T16:31:16.9784349Z remote: Compressing objects:  86% (38/44)        
+2024-05-20T16:31:16.9784976Z remote: Compressing objects:  88% (39/44)        
+2024-05-20T16:31:16.9785554Z remote: Compressing objects:  90% (40/44)        
+2024-05-20T16:31:16.9786241Z remote: Compressing objects:  93% (41/44)        
+2024-05-20T16:31:16.9787027Z remote: Compressing objects:  95% (42/44)        
+2024-05-20T16:31:16.9787621Z remote: Compressing objects:  97% (43/44)        
+2024-05-20T16:31:16.9788333Z remote: Compressing objects: 100% (44/44)        
+2024-05-20T16:31:16.9788998Z remote: Compressing objects: 100% (44/44), done.        
+2024-05-20T16:31:17.0277370Z remote: Total 62 (delta 3), reused 61 (delta 3), pack-reused 0        
+2024-05-20T16:31:17.0399780Z From https://github.com/helloitsurdvq/VDT2024project
+2024-05-20T16:31:17.0401694Z  * [new ref]         5cf3489b971f3cf042eedc305b10378e99b56c09 -> origin/main
+2024-05-20T16:31:17.0431937Z ##[endgroup]
+2024-05-20T16:31:17.0432799Z ##[group]Determining the checkout info
+2024-05-20T16:31:17.0434302Z ##[endgroup]
+2024-05-20T16:31:17.0435197Z ##[group]Checking out the ref
+2024-05-20T16:31:17.0438994Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2024-05-20T16:31:17.0556822Z Switched to a new branch 'main'
+2024-05-20T16:31:17.0560216Z branch 'main' set up to track 'origin/main'.
+2024-05-20T16:31:17.0565276Z ##[endgroup]
+2024-05-20T16:31:17.0609200Z [command]/usr/bin/git log -1 --format='%H'
+2024-05-20T16:31:17.0642201Z '5cf3489b971f3cf042eedc305b10378e99b56c09'
+2024-05-20T16:31:17.1011025Z ##[group]Run actions/setup-node@v3
+2024-05-20T16:31:17.1011693Z with:
+2024-05-20T16:31:17.1012015Z   node-version: 18
+2024-05-20T16:31:17.1012425Z   always-auth: false
+2024-05-20T16:31:17.1012929Z   check-latest: false
+2024-05-20T16:31:17.1013502Z   token: ***
+2024-05-20T16:31:17.1013898Z ##[endgroup]
+2024-05-20T16:31:17.2978368Z Found in cache @ /opt/hostedtoolcache/node/18.20.2/x64
+2024-05-20T16:31:17.2991737Z ##[group]Environment details
+2024-05-20T16:31:17.7487625Z node: v18.20.2
+2024-05-20T16:31:17.7488830Z npm: 10.5.0
+2024-05-20T16:31:17.7489523Z yarn: 1.22.22
+2024-05-20T16:31:17.7491074Z ##[endgroup]
+2024-05-20T16:31:17.7643463Z ##[group]Run cd app/api
+2024-05-20T16:31:17.7644100Z [36;1mcd app/api[0m
+2024-05-20T16:31:17.7644433Z [36;1mnpm install[0m
+2024-05-20T16:31:17.7729524Z shell: /usr/bin/bash -e {0}
+2024-05-20T16:31:17.7730009Z ##[endgroup]
+2024-05-20T16:31:20.1456825Z npm WARN deprecated to-iso-string@0.0.2: to-iso-string has been deprecated, use @segment/to-iso-string instead.
+2024-05-20T16:31:20.1965276Z npm WARN deprecated formatio@1.0.2: This package is unmaintained. Use @sinonjs/formatio instead
+2024-05-20T16:31:20.2000387Z npm WARN deprecated mkdirp@0.3.0: Legacy versions of mkdirp are no longer supported. Please update to mkdirp 1.x. (Note that the API surface has changed to use Promises in 1.x.)
+2024-05-20T16:31:20.2525423Z npm WARN deprecated minimatch@0.3.0: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue
+2024-05-20T16:31:20.2594136Z npm WARN deprecated samsam@1.1.3: This package has been deprecated in favour of @sinonjs/samsam
+2024-05-20T16:31:20.2777891Z npm WARN deprecated mkdirp@0.5.1: Legacy versions of mkdirp are no longer supported. Please update to mkdirp 1.x. (Note that the API surface has changed to use Promises in 1.x.)
+2024-05-20T16:31:20.3086732Z npm WARN deprecated superagent@1.2.0: Please upgrade to v9.0.0+ as we have fixed a public vulnerability with formidable dependency. Note that v9.0.0+ requires Node.js v14.18.0+. See https://github.com/ladjs/superagent/pull/1800 for insight. This project is supported and maintained by the team at Forward Email @ https://forwardemail.net
+2024-05-20T16:31:20.4697218Z npm WARN deprecated jade@0.26.3: Jade has been renamed to pug, please install the latest version of pug instead of jade
+2024-05-20T16:31:20.4736249Z npm WARN deprecated formidable@1.0.14: Please upgrade to latest, formidable@v2 or formidable@v3! Check these notes: https://bit.ly/2ZEqIau
+2024-05-20T16:31:20.6944316Z npm WARN deprecated sinon@1.8.2: 16.1.1
+2024-05-20T16:31:21.0295929Z 
+2024-05-20T16:31:21.0297116Z added 208 packages, and audited 209 packages in 3s
+2024-05-20T16:31:21.0297792Z 
+2024-05-20T16:31:21.0298508Z 20 packages are looking for funding
+2024-05-20T16:31:21.0300043Z   run `npm fund` for details
+2024-05-20T16:31:21.0454499Z 
+2024-05-20T16:31:21.0455433Z 15 vulnerabilities (4 moderate, 8 high, 3 critical)
+2024-05-20T16:31:21.0456471Z 
+2024-05-20T16:31:21.0460332Z To address all issues (including breaking changes), run:
+2024-05-20T16:31:21.0461975Z   npm audit fix --force
+2024-05-20T16:31:21.0462823Z 
+2024-05-20T16:31:21.0466737Z Run `npm audit` for details.
+2024-05-20T16:31:21.0677171Z ##[group]Run cd app/api
+2024-05-20T16:31:21.0677604Z [36;1mcd app/api[0m
+2024-05-20T16:31:21.0678080Z [36;1mnpx mocha test/trainee.js[0m
+2024-05-20T16:31:21.0737659Z shell: /usr/bin/bash -e {0}
+2024-05-20T16:31:21.0738089Z env:
+2024-05-20T16:31:21.0738577Z   MONGO_URL: mongodb://localhost:27017/testdb
+2024-05-20T16:31:21.0739006Z ##[endgroup]
+2024-05-20T16:31:21.9100064Z 
+2024-05-20T16:31:21.9103658Z 
+2024-05-20T16:31:21.9111011Z Listening on port 3000
+2024-05-20T16:31:21.9233403Z   Trainee Controller
+2024-05-20T16:31:21.9234613Z     /GET getAllTrainees
+2024-05-20T16:31:21.9270039Z 
+2024-05-20T16:31:21.9271818Z       ✓ should return all trainees with a 200 status code
+2024-05-20T16:31:21.9290190Z Something went wrong
+2024-05-20T16:31:21.9292300Z 
+2024-05-20T16:31:21.9293362Z       ✓ should handle errors and return a 500 status code
+2024-05-20T16:31:21.9298458Z     /GET/:id getOneTrainee
+2024-05-20T16:31:21.9312620Z 
+2024-05-20T16:31:21.9313805Z       ✓ should return a trainee with a 200 status code
+2024-05-20T16:31:21.9326563Z Something went wrong
+2024-05-20T16:31:21.9328416Z 
+2024-05-20T16:31:21.9329380Z       ✓ should handle errors and return a 500 status code
+2024-05-20T16:31:21.9341385Z 
+2024-05-20T16:31:21.9342512Z       ✓ should return a 404 status code if trainee not found
+2024-05-20T16:31:21.9344040Z     /POST saveTrainee
+2024-05-20T16:31:21.9354006Z 
+2024-05-20T16:31:21.9354706Z       ✓ should create a trainee and return a 201 status code
+2024-05-20T16:31:21.9364669Z 
+2024-05-20T16:31:21.9365242Z       ✓ should handle missing fields and return a 400 status code
+2024-05-20T16:31:21.9405789Z Something went wrong
+2024-05-20T16:31:21.9407279Z 
+2024-05-20T16:31:21.9407876Z       ✓ should handle errors and return a 500 status code
+2024-05-20T16:31:21.9409517Z     /PUT/:id updateTrainee
+2024-05-20T16:31:21.9420795Z 
+2024-05-20T16:31:21.9421822Z       ✓ should update a trainee and return a 200 status code
+2024-05-20T16:31:21.9431294Z 
+2024-05-20T16:31:21.9432283Z       ✓ should return a 400 status code if no update data is provided
+2024-05-20T16:31:21.9442070Z 
+2024-05-20T16:31:21.9443186Z       ✓ should return a 404 status code if trainee not found
+2024-05-20T16:31:21.9451703Z Something went wrong
+2024-05-20T16:31:21.9452854Z 
+2024-05-20T16:31:21.9453549Z       ✓ should handle errors and return a 500 status code
+2024-05-20T16:31:21.9454902Z     /DELETE/:id deleteTrainee
+2024-05-20T16:31:21.9463653Z 
+2024-05-20T16:31:21.9464282Z       ✓ should delete a trainee and return a 200 status code
+2024-05-20T16:31:21.9474689Z 
+2024-05-20T16:31:21.9475695Z       ✓ should return a 404 status code if trainee not found
+2024-05-20T16:31:21.9484250Z Something went wrong
+2024-05-20T16:31:21.9485280Z 
+2024-05-20T16:31:21.9486243Z       ✓ should handle errors and return a 500 status code
+2024-05-20T16:31:21.9487332Z 
+2024-05-20T16:31:21.9491628Z 
+2024-05-20T16:31:21.9492103Z   15 passing (39ms)
+2024-05-20T16:31:21.9492655Z 
+2024-05-20T16:31:21.9753586Z Post job cleanup.
+2024-05-20T16:31:22.2117065Z Post job cleanup.
+2024-05-20T16:31:22.3156006Z [command]/usr/bin/git version
+2024-05-20T16:31:22.3217395Z git version 2.45.1
+2024-05-20T16:31:22.3265596Z Temporarily overriding HOME='/home/runner/work/_temp/48ac8cfa-8ff2-471e-be7f-f3cae1091393' before making global git config changes
+2024-05-20T16:31:22.3267323Z Adding repository directory to the temporary git global config as a safe directory
+2024-05-20T16:31:22.3272300Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/VDT2024project/VDT2024project
+2024-05-20T16:31:22.3319380Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2024-05-20T16:31:22.3367072Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2024-05-20T16:31:22.3645580Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2024-05-20T16:31:22.3678988Z http.https://github.com/.extraheader
+2024-05-20T16:31:22.3689236Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2024-05-20T16:31:22.3735110Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2024-05-20T16:31:22.4238207Z Cleaning up orphan processes
