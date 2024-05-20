@@ -1,0 +1,39 @@
+version: "3"
+
+services:
+  web:
+    image: web
+    container_name: dvq1601-web
+    stdin_open: true
+    restart: unless-stopped
+    ports:
+      - 8080:8080
+    networks:
+      - fe-api
+
+  api:
+    image: api
+    container_name: dvq1601-api
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+    networks:
+      - fe-api
+      - api-db
+    depends_on:
+      - db
+
+  db: 
+    image: mongo:5.0
+    container_name: dvq1601-db
+    restart: unless-stopped
+    ports:
+      - 27017:27017
+    networks:
+      - api-db
+    volumes:
+      - ./mongodb:/docker-entrypoint-initdb.d
+      
+networks:
+  fe-api:
+  api-db:
