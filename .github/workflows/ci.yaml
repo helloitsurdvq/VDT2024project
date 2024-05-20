@@ -1,12 +1,12 @@
-name: Unit Test
+name: Unit Test Continuous Integration
 
 on:
   push:
     branches:
-      - main
+      - '*'
   pull_request:
     branches:
-      - '*'
+      - main
 
 # env:
 #   API_DIR: ./app/api
@@ -15,6 +15,12 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
+    services:
+      mongodb:
+        image: mongo:latest
+        ports:
+          - 27017:27017
+          
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
