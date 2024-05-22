@@ -5,4 +5,4 @@ all:
       hostname: vietquang
       ansible_connection: local
       ansible_become_user: root
-      ansible_become_password: {{ become_password }} # enter password here
+      ansible_become_password: hello123 # enter password here

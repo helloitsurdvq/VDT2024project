@@ -40,7 +40,7 @@ Author: **Đinh Việt Quang**
 ![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/1.8_unittest.jpg)
 
 ## 2. Containerization
-Technique such as multi-layering are usedfor Dockerfile to optimize the size and building time for images. To run multiple containers for convenience, use this command in the `web` folder:
+Technique such as multi-stage build and layer caching are used for Dockerfile to optimize the size and building time for images. To run multiple containers for convenience, run this command in the `web` folder path:
 ```shell
 docker compose up -d
 ```
@@ -66,6 +66,9 @@ Output log of the `docker history` command can be found **[here](https://github.
 ```shell
 docker history api | tee api_history.log
 ```
+Once the  `docker compose` has been executed, the application can be visited at [http://localhost:8080/](http://localhost:8080/) and there will be 3 containers running:  
+![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/1.9_docker_container.jpg)
+
 ## 3. Continuous Integration
 - GitHub Action CI setup file: [link](https://github.com/helloitsurdvq/VDT2024project/blob/main/.github/workflows/ci.yaml)
 
@@ -78,11 +81,17 @@ docker history api | tee api_history.log
 ![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/2.2_ci_demo_pullrequest.jpg)
 
 ## 4. Automation
+- To use the playbook, there are two main files to work with, namely `ansible/inventory.yml` and `ansible/playbook.yml`
+  - `ansible/inventory.yml`: contains the list of hosts that an user wants to apply to the playbook, in my project, I only interacted with one host.
+  - `ansible/playbook.yml`: the main playbook file that contains all the tasks to be executed.
+  - `ansible/roles`: This folder contains all roles for the playbook to deal with. Each role includes the tasks to be executed in `tasks/main.yml` and the defaults variables list in `vars/main.yml`.
 - Source code for the ansible playbooks can be found [here](https://github.com/helloitsurdvq/VDT2024project/tree/main/ansible).
 - To deploy the application from the beginning:
 ```shell
 ansible-playbook -i inventory.yml playbook.yml
 ```
-- The output log is [here](https://github.com/helloitsurdvq/VDT2024project/blob/main/ansible/ansible.log)
+- The full output log is [here](https://github.com/helloitsurdvq/VDT2024project/blob/main/ansible/ansible.log), the partial result is shown in this:
+![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/3.1_ansible_demo.jpg)
+
 # 5. Research report
 - My research work is related to **[the security of the Docker container](https://github.com/helloitsurdvq/VDT2024project/blob/main/docs/DinhVietQuang-research.pdf)**.
