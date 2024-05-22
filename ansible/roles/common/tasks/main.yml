@@ -1,0 +1,50 @@
+- name: Update APT cache and all packages
+  become: true
+  apt:
+    update_cache: yes
+    upgrade: yes
+
+- name: Install required system packages
+  apt:
+    pkg:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - gnupg
+      - software-properties-common
+    state: latest
+    update_cache: yes
+    
+- name: Add Docker GPG key
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+
+- name: Add Docker Repository
+  apt_repository:
+    repo: deb https://download.docker.com/linux/ubuntu jammy stable
+    state: present
+
+- name: Update APT
+  become: true
+  apt:
+    update_cache: yes
+
+- name: Install docker engine, docker container, and docker compose 
+  become: true
+  apt:
+    name: ['docker-ce', 'docker-ce-cli', 'containerd.io', 'docker-buildx-plugin', 'docker-compose-plugin']
+    state: latest
+    update_cache: yes
+
+- name: Check if docker service is running
+  service:
+    name: docker
+    state: started
+    enabled: yes
+
+- name: Add user "{{ docker_user }}" to docker group
+  user:
+    name: "{{ docker_user }}"
+    groups: docker
+    append: yes

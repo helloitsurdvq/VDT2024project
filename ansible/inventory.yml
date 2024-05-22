@@ -1,0 +1,8 @@
+---
+all:
+  hosts:
+    localhost:
+      hostname: vietquang
+      ansible_connection: local
+      ansible_become_user: root
+      ansible_become_password: hikari16012003haha

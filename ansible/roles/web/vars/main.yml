@@ -1,0 +1,7 @@
+docker_network_name: helloitsurdvq
+web_image_name: web
+web_image_tag: latest
+web_container_name: dvq1601-web
+web_ports:
+  - "8080:80"
+web_network_fe_api: web_fe-api

@@ -1,0 +1,28 @@
+---
+- name: Install docker
+  hosts: all
+  become: true
+  gather_facts: true
+  roles:
+    - common
+
+- name: Deploy web service
+  hosts: all
+  become: true
+  gather_facts: true
+  roles:
+    - web
+
+- name: Deploy api service
+  hosts: all
+  become: true
+  gather_facts: true
+  roles:
+    - api
+
+- name: Deploy db service
+  hosts: all
+  become: true
+  gather_facts: true
+  roles:
+    - db

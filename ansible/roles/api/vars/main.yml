@@ -1,0 +1,8 @@
+docker_network_name: helloitsurdvq
+api_image_name: api
+api_tag: latest
+api_container_name: dvq1601-api
+api_ports:
+  - "3000:3000"
+api_network_fe_api: web_fe-api
+api_network_api_db: web_api-db

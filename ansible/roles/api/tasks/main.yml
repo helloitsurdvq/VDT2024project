@@ -1,0 +1,21 @@
+- name: Docker network exists?
+  docker_network_info:
+    name: "{{ docker_network_name }}"
+  register: docker_network
+  become: true
+
+- name: Create docker network
+  docker_network:
+    name: "{{ docker_network_name }}"
+    state: present
+  become: true
+
+- name: Run docker image {{ api_image_name }}:{{ api_tag }}
+  docker_container:
+    name: "{{ api_container_name }}"
+    image: "{{ api_image_name }}:{{ api_tag }}"
+    restart_policy: unless-stopped
+    networks:
+      - name: "{{ api_network_fe_api }}"
+      - name: "{{ api_network_api_db }}"
+    ports: "{{ api_ports }}"

@@ -1,0 +1,1 @@
+mongoimport --db vdt --collection trainees --ignoreBlanks --type csv --file /docker-entrypoint-initdb.d/interns.csv --drop --headerline
