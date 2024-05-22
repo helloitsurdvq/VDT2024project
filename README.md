@@ -21,7 +21,7 @@ Author: **Đinh Việt Quang**
 - For the backend, I used [NodeJS](https://nodejs.org/en) to build the API, connecting to [MongoDB](https://www.mongodb.com/) as the database.
 **The source code for backend is [here](https://github.com/helloitsurdvq/VDT2024-api)**
 
-- For the unit test, I used [Mocha](https://mochajs.org/) and [Chai](https://www.chaijs.com/) framework which avoided interaction. The testing source code can be found [here](https://github.com/helloitsurdvq/VDT2024project/blob/main/app/api/test/trainee.js)
+- For the unit test, I used [Mocha](https://mochajs.org/) and [Chai](https://www.chaijs.com/) framework which avoided interaction with the database. The testing source code can be found [here](https://github.com/helloitsurdvq/VDT2024project/blob/main/app/api/test/trainee.js)
 
 - **All the Github source code can be found at this [link](https://github.com/helloitsurdvq/VDT2024project).** 
 
