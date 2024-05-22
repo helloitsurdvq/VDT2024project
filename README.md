@@ -78,7 +78,7 @@ docker history api | tee api_history.log
 ![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/2.2_ci_demo_pullrequest.jpg)
 
 ## 4. Automation
-- Source code for the ansible playbooks can be found [here].(https://github.com/helloitsurdvq/VDT2024project/tree/main/ansible)
+- Source code for the ansible playbooks can be found [here](https://github.com/helloitsurdvq/VDT2024project/tree/main/ansible).
 - To deploy the application from the beginning:
 ```shell
 ansible-playbook -i inventory.yml playbook.yml
