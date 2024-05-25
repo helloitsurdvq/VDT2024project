@@ -97,7 +97,7 @@ ansible-playbook -i inventory.yml playbook.yml
 ![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/3.2_ansible_localhost.jpg)
 
 - The output in the hosttestusr1:
-![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/3.2_ansible_hosttestusr1.jpg)
+![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/3.3_ansible_hosttestusr1.jpg)
 
 # 5. Research report
 - My research work is related to **[the security issue of the Docker container](https://github.com/helloitsurdvq/VDT2024project/blob/main/docs/DinhVietQuang-research.pdf)**.
