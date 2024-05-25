@@ -91,7 +91,7 @@ Once the  `docker compose` has been executed, the application can be visited at 
 ansible-playbook -i inventory.yml playbook.yml
 ```
 - The full output log is [here](https://github.com/helloitsurdvq/VDT2024project/blob/main/ansible/ansible.log), the partial result is shown in this:
-![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/3.1_ansible_demo.jpg)
+![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/3.1_ansible_multihost.jpg)
 
 - The output in the localhost:
 ![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/3.2_ansible_localhost.jpg)
