@@ -82,7 +82,7 @@ Once the  `docker compose` has been executed, the application can be visited at 
 
 ## 4. Automation
 - To use the playbook, there are two main files to work with, namely `ansible/inventory.yml` and `ansible/playbook.yml`
-  - `ansible/inventory.yml`: contains the list of hosts that an user wants to apply to the playbook, in my project, I only interacted with one host.
+  - `ansible/inventory.yml`: contains the list of hosts that an user wants to apply to the playbook, in my project, I interacted with *two hosts*, namely **localhost** and **hosttestusr1**.
   - `ansible/playbook.yml`: the main playbook file that contains all the tasks to be executed.
   - `ansible/roles`: This folder contains all roles for the playbook to deal with. Each role includes the tasks to be executed in `tasks/main.yml` and the defaults variables list in `vars/main.yml`.
 - Source code for the ansible playbooks can be found [here](https://github.com/helloitsurdvq/VDT2024project/tree/main/ansible).
@@ -92,6 +92,12 @@ ansible-playbook -i inventory.yml playbook.yml
 ```
 - The full output log is [here](https://github.com/helloitsurdvq/VDT2024project/blob/main/ansible/ansible.log), the partial result is shown in this:
 ![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/3.1_ansible_demo.jpg)
+
+- The output in the localhost:
+![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/3.2_ansible_localhost.jpg)
+
+- The output in the hosttestusr1:
+![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/3.2_ansible_hosttestusr1.jpg)
 
 # 5. Research report
 - My research work is related to **[the security issue of the Docker container](https://github.com/helloitsurdvq/VDT2024project/blob/main/docs/DinhVietQuang-research.pdf)**.
