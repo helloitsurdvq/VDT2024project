@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: web
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/helloitsurdvq/VDT2024-webFrontend.git'
+    path: 'charts'
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+        - 'https://raw.githubusercontent.com/helloitsurdvq/VDT2024-web-config/main/values.yaml'
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: web
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

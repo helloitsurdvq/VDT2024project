@@ -1,0 +1,54 @@
+name: Continuous Delivery Docker Image
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Login Docker Hub
+        uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
+      
+      - name: Setup Docker Buildx 
+        uses: docker/setup-buildx-action@v2
+        id: buildx 
+
+      - name: Extract metadata (tags, labels) for Web Image
+        id: meta
+        uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
+        with:
+          images: ${{ secrets.DOCKERHUB_USERNAME }}/web
+
+      - name: Build and Push Docker Web Image
+        uses: docker/build-push-action@v4
+        id: docker_build_frontend
+        with:
+          context: ./app/web
+          builder: ${{steps.buildx.outputs.name}}
+          push: true
+          tags: ${{ steps.meta.outputs.tags}}
+          
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta2
+        uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
+        with:
+          images: ${{ secrets.DOCKERHUB_USERNAME }}/api
+
+      - name: Build and Push Docker API Image
+        uses: docker/build-push-action@v4
+        id: docker_build_backend
+        with:
+          context: ./app/api/
+          builder: ${{steps.buildx.outputs.name}}
+          push: true
+          tags: ${{ steps.meta2.outputs.tags}}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max

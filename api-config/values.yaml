@@ -1,0 +1,6 @@
+image:
+  repository: helloitsurdvq/api
+  tag: latest
+
+service:
+  nodePort: 30081

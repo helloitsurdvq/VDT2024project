@@ -1,0 +1,5 @@
+apiVersion: v2
+name: web
+description: Helm chart for web frontend
+version: 0.1.0
+appVersion: "1.0"
