@@ -8,7 +8,7 @@ Author: **Đinh Việt Quang**
 - [3. Continuous Integration](#3-continuous-integration)
 - [4. Automation](#4-automation)
 - [5. Research report](#5-research-report)
-- [6. Kubernetes deploying](#6-kubernetes-deploying)
+- [6. Kubernetes deployment](#6-kubernetes-deployment)
 - [7. K8S Helm Chart](#7-k8s-helm-chart)
 - [8. Continuous Delivery](#8-continuous-delivery)
 - [9. Monitoring](#9-monitoring)
@@ -106,8 +106,8 @@ ansible-playbook -i inventory.yml playbook.yml
 ## 5. Research report
 - My research work is related to **[the security issue of the Docker container](https://github.com/helloitsurdvq/VDT2024project/blob/main/docs/DinhVietQuang-research.pdf)**.
 
-## 6. Kubernetes deploying
-Minikube is used for the following tasks of the mini project. 
+## 6. Kubernetes deployment
+Minikube is used for the following tasks of the mini project thanks to the convenience setup. 
 - First of all, Install kubectl:
 ```shell
 # Download the latest release
@@ -124,47 +124,61 @@ kubectl version --client
 ```
 
 The output:
-
+![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/4.1_k8s_kubectl.jpg)
 
 Next, setup the Minikube
 ```shell
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
 ```
 
-To start the Minikube
+To start the Minikube:
 ```shell
-kubemini start
+minikube start
 ```
-
+To identify the Minikube ip:
+```shell
+minikube ip
+```
 The result after successfully installing Minikube:
 
+![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/4.2_minikube_complete.jpg)
+
+Minikube ip is: [http://192.168.49.2](http://192.168.49.2)
 ## 7. K8S helm chart
 ### ArgoCD
 - All the instructions and command to install the ArgoCD can be found in this [link](https://github.com/argoproj/argo-helm)
-- Manifest file can be found [here]()
+- Manifest file can be found [here](https://github.com/helloitsurdvq/VDT2024project/blob/main/argoCDinstall.yml)
 - The interface of ArgoCD:
+
+![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/5.1_argocd_ui.jpg)
 ### Helm Chart
 
-The helm chart for to deploy web and api is here
-- [web]()
-- [api]()
+The helm chart to deploy web and api service is here:
+- [web](https://github.com/helloitsurdvq/VDT2024-webFrontend/tree/main/charts)
+- [api](https://github.com/helloitsurdvq/VDT2024-api/tree/main/charts)
 
 The config repository for web and api service:
 - [web config](https://github.com/helloitsurdvq/VDT2024-web-config)
 - [api config](https://github.com/helloitsurdvq/VDT2024-api-config)
 
 The manifest file for web and api service:
-- [web manifest]()
-- [api manifest]()
+- [web manifest](https://github.com/helloitsurdvq/VDT2024project/blob/main/app/web/charts/manifest.yaml)
+- [api manifest](https://github.com/helloitsurdvq/VDT2024project/blob/main/app/api/charts/manifest.yaml)
 
 The Screenshot of the ArgoCD system interface on the browser
 
-![img]()
+![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/5.2_argo_web.jpg)
 
-- The website can be accessed at [http://192.168.49.2:30080/](http://192.168.49.2:30080/). The manifest file for web deployment can be found [here]()
-- The api can be accessed at [ http://192.168.49.2:30081/]( http://192.168.49.2:30081/). The manifest file for api deployment can be found [here]()
+![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/5.3_argo_api.jpg)
 
-Screenshot of browser screen when accessing Web URL, API URL
+
+- The website can be accessed at [http://192.168.49.2:30080/](http://192.168.49.2:30080/).
+- The api can be accessed at [ http://192.168.49.2:30081/]( http://192.168.49.2:30081/).
+
+Small screenshot of browser screen when accessing Web URL, API URL at [http://192.168.49.2:30080/](http://192.168.49.2:30080/):
+
+![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/5.2_argo_web_demo.jpg)
+
 ## 8. Continuous delivery 
 GitHub Action CD setup file for web and api service can be found here:
 - [webCD.yaml](https://github.com/helloitsurdvq/VDT2024-webFrontend/blob/main/.github/workflows/cd.yaml)
@@ -176,7 +190,10 @@ Output log of the CD workflow
 
 ArgoCD's history image when there are changes in web config repo and api config repo
 
-![img]()
+![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/6.1_cd_history.jpg)
+
+![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/6.1_cd_history_api.jpg)
+
 ## 9. Monitoring
 ```shell
 # Add the repository
@@ -192,8 +209,14 @@ minikube service prometheus-server-ext
 ```
 The outcome of the Prometheus setup:
 
-![img]()
+![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/7.1_prometheus_ui.jpg)
 
+Prometheus website is set up at [http://192.168.49.2:31892](http://192.168.49.2:31892) when executing
+```shell
+minikube service prometheus-server-ext
+```
+
+![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/7.2_prometheus_link.jpg)
 ## 10. Logging
 (To be continued)
 ## 11. Security
@@ -223,15 +246,15 @@ systemctl restart haproxy.service
 systemctl status haproxy.service
 ```
 
-The HAproxy config file can be found [here]()
+The HAproxy config file can be found [here](https://github.com/helloitsurdvq/VDT2024project/blob/main/haproxy/haproxy.cfg)
 
 The address to access the website will be:
 - web: [https://192.168.227.48:3001/](https://192.168.227.48:3001/)
 - api: [https://192.168.227.48:8081/](https://192.168.227.48:8081/) 
 
-![img]()
+![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/9.1.1_security_haproxy_web.jpg)
 
-![img]()
+![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/9.1.2_security_haproxy_api.jpg)
 ### Authentication
 
 ### Endpoint rate limitation
@@ -242,6 +265,20 @@ To implement rate limiting for the api service, the `express-rate-limit` are use
 npm install express-rate-limit
 ```
 
-The source code to deal with the issue can be found [here]()
+The source code to deal with the issue can be found [here](https://github.com/helloitsurdvq/VDT2024-api)
+
+```javascript
+const rateLimit = require('express-rate-limit');
+
+const rateLimitMiddleware = rateLimit({
+  windowMs: 1 * 60 * 1000, 
+  max: 10, 
+  handler: (req, res) => {
+    res.status(409).send({ message: 'Too many requests, please try again later.' });
+  },
+});
+
+module.exports = rateLimitMiddleware;
+```
 
 If the limit is exceeded, the client will receive a `409 Conflict` response. This helps in preventing abuse and managing traffic effectively.
