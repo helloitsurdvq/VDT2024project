@@ -120,7 +120,7 @@ ansible-playbook -i inventory.yml playbook.yml
 
 ## 6. Kubernetes deployment
 Minikube is used for the following tasks of the mini project thanks to the convenience setup. 
-- First of all, Install kubectl:
+- First of all, install `kubectl`:
 ```shell
 # Download the latest release
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
@@ -208,26 +208,32 @@ ArgoCD's history image when there are changes in web config repo and api config 
 ![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/6.2_cd_history_api.jpg)
 
 ## 9. Monitoring
+**Overview**: Prometheus is an open-source monitoring and alerting toolkit, which is designed for reliability and scalability. By using the Prometheus Operator, we can simplify the deployment and management of Prometheus in a Kubernetes cluster.
+
+**Prerequisites**
+- A running Kubernetes cluster.
+- kubectl command-line tool configured to interact with your cluster.
+- helm package manager installed.
+- minikube for local Kubernetes development (optional).
+
+**Deployment steps**
 ```shell
-# Add the repository
+# 1. Add the Prometheus Helm Repository
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
-
+# 2. Install Prometheus
 helm install prometheus prometheus-community/prometheus
-
+# 3. Install Prometheus Operator hich will manage the Prometheus instances and configurations within the cluster
 helm install prometheus-operator prometheus-community/kube-prometheus-stack
-# Expose the service
+# Expose the Prometheus service
 kubectl expose service prometheus-server --type=NodePort --target-port=9090 --name=prometheus-server-ext
-# Expose nodePort
+# Access the Prometheus UI
 minikube service prometheus-server-ext
 ```
 The outcome of the Prometheus setup:
 
 ![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/7.1_prometheus_ui.jpg)
 
-Prometheus website is set up at [http://192.168.49.2:31892](http://192.168.49.2:31892) when executing
-```shell
-minikube service prometheus-server-ext
-```
+Prometheus website is set up at [http://192.168.49.2:31892](http://192.168.49.2:31892).
 
 ![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/7.2_prometheus_link.jpg)
 ## 10. Logging
