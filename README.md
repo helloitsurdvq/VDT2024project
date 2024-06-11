@@ -205,7 +205,7 @@ ArgoCD's history image when there are changes in web config repo and api config 
 
 ![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/6.1_cd_history.jpg)
 
-![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/6.1_cd_history_api.jpg)
+![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/6.2_cd_history_api.jpg)
 
 ## 9. Monitoring
 ```shell
