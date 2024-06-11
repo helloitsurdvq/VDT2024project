@@ -269,7 +269,9 @@ The address to access the website will be:
 
 ![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/9.1.2_security_haproxy_api.jpg)
 ### Authentication
-All the works is located in [api repository](https://github.com/helloitsurdvq/VDT2024-api)
+All the works is located in [api repository](https://github.com/helloitsurdvq/VDT2024-api).
+
+The documentation for this issue can be found [here](https://github.com/helloitsurdvq/VDT2024-api/blob/main/authentication.md).
 
 HTTP Response results when using postman to call URLs when not passing authentication (without jwt):
 
@@ -280,8 +282,6 @@ Login process and HTTP Response results when using postman to call URLs when pas
 ![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/9.2.1_security_login_admin.jpg)
 
 ![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/9.2.8_security_withtoken.jpg)
-
-
 
 Route authorization details can be summarized as followed:
 - Admin gains full access to all CRUD operations, while Trainee is strictly limited to read-only access (GET requests) and forbidden from creating, updating, or deleting resources.
@@ -326,6 +326,8 @@ Some example:
 
 ![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/9.2.6_security_deletetrainee_fail.jpg)
 ### Endpoint rate limitation
+The documentation for this issue can be found [here](https://github.com/helloitsurdvq/VDT2024-api/blob/main/rateLimitation.md).
+
 To implement rate limiting for the api service, the `express-rate-limit` are used. This middleware allows to set up rate limiting rules easily.
 
 ```shell
@@ -366,4 +368,5 @@ module.exports = router;
 If the limit is exceeded, the client will receive a `409 Conflict` response. This helps in preventing abuse and managing traffic effectively.
 
 The outcome when testing on Postman:
+
 ![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/9.3_security_manyreqs.jpg)
