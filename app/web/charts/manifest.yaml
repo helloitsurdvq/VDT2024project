@@ -1,0 +1,14 @@
+project: default
+source:
+ repoURL: 'https://github.com/helloitsurdvq/VDT2024-webFrontend.git'
+ path: charts
+ targetRevision: HEAD
+ helm:
+   valueFiles:
+     - values.yaml
+destination:
+ server: 'https://kubernetes.default.svc'
+ namespace: web
+syncPolicy:
+ syncOptions:
+   - CreateNamespace=true
