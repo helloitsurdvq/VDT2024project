@@ -192,7 +192,7 @@ Small screenshot of browser screen when accessing Web URL, API URL at [http://19
 
 ![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/5.2_argo_web_demo.jpg)
 
-![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/5.6_argo_api_ui.jpg)
+![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/5.6_argo_api_ui.png)
 
 ## 8. Continuous delivery 
 GitHub Action CD setup file for web and api service can be found here:
@@ -275,7 +275,7 @@ The address to access the website will be:
 
 ![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/9.1.1_security_haproxy_web.jpg)
 
-![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/9.1.2_security_haproxy_api.jpg)
+![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/9.1.2_security_haproxy_api.png)
 ### Authentication
 All the work is located in [api repository](https://github.com/helloitsurdvq/VDT2024-api).
 
