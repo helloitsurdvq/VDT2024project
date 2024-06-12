@@ -188,9 +188,11 @@ The Screenshot of the ArgoCD system interface on the browser
 - The website can be accessed at [http://192.168.49.2:30080/](http://192.168.49.2:30080/).
 - The api can be accessed at [ http://192.168.49.2:30081/]( http://192.168.49.2:30081/).
 
-Small screenshot of browser screen when accessing Web URL, API URL at [http://192.168.49.2:30080/](http://192.168.49.2:30080/):
+Small screenshot of browser screen when accessing Web URL, API URL at [http://192.168.49.2:30080/](http://192.168.49.2:30080/) and [http://192.168.49.2:30081/api/trainee](http://192.168.49.2:30081/api/trainee):
 
 ![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/5.2_argo_web_demo.jpg)
+
+![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/5.6_argo_api_ui.jpg)
 
 ## 8. Continuous delivery 
 GitHub Action CD setup file for web and api service can be found here:
