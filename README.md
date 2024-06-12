@@ -275,7 +275,7 @@ The address to access the website will be:
 
 ![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/9.1.2_security_haproxy_api.jpg)
 ### Authentication
-All the works is located in [api repository](https://github.com/helloitsurdvq/VDT2024-api).
+All the work is located in [api repository](https://github.com/helloitsurdvq/VDT2024-api).
 
 The documentation for this issue can be found [here](https://github.com/helloitsurdvq/VDT2024-api/blob/main/authentication.md).
 
