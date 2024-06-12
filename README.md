@@ -156,7 +156,7 @@ The result after successfully installing Minikube:
 
 ![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/4.2_minikube_complete.jpg)
 
-Minikube ip: [http://192.168.49.2](http://192.168.49.2)
+Minikube ip: [http://192.168.49.2](http://192.168.49.2).
 ## 7. K8S helm chart
 ### ArgoCD
 - All the instructions and command to install the ArgoCD can be found in this [link](https://github.com/argoproj/argo-helm)
@@ -199,15 +199,15 @@ GitHub Action CD setup file for web and api service can be found here:
 - [webCD.yaml](https://github.com/helloitsurdvq/VDT2024-webFrontend/blob/main/.github/workflows/cd.yaml)
 - [apiCD.yaml](https://github.com/helloitsurdvq/VDT2024-api/blob/main/.github/workflows/cd.yaml)
 
-Output log of the CD workflow
+Output log of the CD workflow:
 - [webCD.log](https://github.com/helloitsurdvq/VDT2024-webFrontend/blob/main/.github/workflows/webCD.log)
 - [apiCD.log](https://github.com/helloitsurdvq/VDT2024-api/blob/main/.github/workflows/apiCD.log)
 
-ArgoCD's history image when there are changes in web config repo and api config repo
+ArgoCD's history image when there are changes in web config repo and api config repo:
 
-![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/6.1_cd_history.jpg)
+![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/5.7_argo_diff_web.png)
 
-![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/6.2_cd_history_api.jpg)
+![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/5.8_argo_diff_api.png)
 
 ## 9. Monitoring
 **Overview**: Prometheus is an open-source monitoring and alerting toolkit, which is designed for reliability and scalability. By using the Prometheus Operator, we can simplify the deployment and management of Prometheus in a Kubernetes cluster.
@@ -226,9 +226,9 @@ helm repo add prometheus-community https://prometheus-community.github.io/helm-c
 helm install prometheus prometheus-community/prometheus
 # 3. Install Prometheus Operator hich will manage the Prometheus instances and configurations within the cluster
 helm install prometheus-operator prometheus-community/kube-prometheus-stack
-# Expose the Prometheus service
+# 4. Expose the Prometheus service
 kubectl expose service prometheus-server --type=NodePort --target-port=9090 --name=prometheus-server-ext
-# Access the Prometheus UI
+# 5. Access the Prometheus UI
 minikube service prometheus-server-ext
 ```
 The outcome of the Prometheus setup:
@@ -267,7 +267,7 @@ systemctl restart haproxy.service
 systemctl status haproxy.service
 ```
 
-The HAproxy config file can be found [here](https://github.com/helloitsurdvq/VDT2024project/blob/main/haproxy/haproxy.cfg)
+The HAproxy config file can be found [here](https://github.com/helloitsurdvq/VDT2024project/blob/main/haproxy/haproxy.cfg).
 
 The address to access the website will be:
 - web: [https://192.168.227.48:3001/](https://192.168.227.48:3001/)
