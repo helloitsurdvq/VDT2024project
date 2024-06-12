@@ -240,7 +240,7 @@ ArgoCD's history image when there are changes in web config repo and api config 
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 # 2. Install Prometheus
 helm install prometheus prometheus-community/prometheus
-# 3. Install Prometheus Operator hich will manage the Prometheus instances and configurations within the cluster
+# 3. Install Prometheus Operator which will manage the Prometheus instances and configurations within the cluster
 helm install prometheus-operator prometheus-community/kube-prometheus-stack
 # 4. Expose the Prometheus service
 kubectl expose service prometheus-server --type=NodePort --target-port=9090 --name=prometheus-server-ext
@@ -333,7 +333,7 @@ router.delete("/:id", authMiddleware, roleMiddleware, traineeController.deleteTr
 
 module.exports = router;
 ```
-Some example:
+Some examples:
 - Everyone can view trainee list
 
 ![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/9.2.2_security_getall.jpg)
