@@ -159,9 +159,24 @@ The result after successfully installing Minikube:
 Minikube ip: [http://192.168.49.2](http://192.168.49.2)
 ## 7. K8S helm chart
 ### ArgoCD
+```shell
+kubectl create namespace argocd
+kubectl apply -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+```
+To switch into NodePort service
+```shell
+kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "NodePort"}}'
+```
+
+After that, obtain the password for ArgoCD service
+```shell
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+``` 
+
 - All the instructions and command to install the ArgoCD can be found in this [link](https://github.com/argoproj/argo-helm)
 - Manifest file can be found [here](https://github.com/helloitsurdvq/VDT2024project/blob/main/argoCDinstall.yml)
-- The interface of ArgoCD:
+
+The interface of ArgoCD:
 
 ![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/5.1_argocd_ui.jpg)
 ### Helm Chart
@@ -336,7 +351,13 @@ Some example:
 ### Endpoint rate limitation
 The documentation for this issue can be found [here](https://github.com/helloitsurdvq/VDT2024-api/blob/main/rateLimitation.md).
 
-To implement rate limiting for the api service, the `express-rate-limit` are used. This middleware allows to set up rate limiting rules easily.
+To implement rate limiting strategy for the api service, the `express-rate-limit` are used. This package primarily uses implementation that can be considered as a combination of the **token bucket** and **leaky bucket** algorithms. It provides the following features:
+
+- *Fixed Window Counter*: tracks the number of requests in a fixed time window (e.g., 1 minute). When the window expires, the count resets.
+- *Sliding Window Counter*: can be configured to track requests in a sliding window, providing a more dynamic view of the request rate.
+- *Burst Handling*: by setting the 'max' value, the middleware can handle bursts of traffic up to the specified limit within the given time window (windowMs).
+
+This middleware allows to set up rate limiting rules easily, helps to ensure that the application can handle a high volume of requests without getting overwhelmed.
 
 ```shell
 # Install package
