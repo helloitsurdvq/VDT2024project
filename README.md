@@ -9,8 +9,8 @@ Author: **Đinh Việt Quang**
 - [4. Automation](#4-automation)
 - [5. Research report](#5-research-report)
 - [6. Kubernetes deployment](#6-kubernetes-deployment)
-- [7. K8S Helm Chart](#7-k8s-helm-chart)
-- [8. Continuous Delivery](#8-continuous-delivery)
+- [7. K8S helm chart](#7-k8s-helm-chart)
+- [8. Continuous delivery](#8-continuous-delivery)
 - [9. Monitoring](#9-monitoring)
 - [10. Logging](#10-logging)
 - [11. Security](#11-security)
@@ -198,8 +198,8 @@ GitHub Action CD setup file for web and api service can be found here:
 - [apiCD.yaml](https://github.com/helloitsurdvq/VDT2024-api/blob/main/.github/workflows/cd.yaml)
 
 Output log of the CD workflow
-- [webCD.log](https://productionresultssa6.blob.core.windows.net/actions-results/ca0675db-67ec-45e6-a1b9-b650e1c4f46a/workflow-job-run-1c8ce01e-97de-5be9-a863-648419f09741/logs/job/job-logs.txt?rsct=text%2Fplain&se=2024-06-11T10%3A32%3A58Z&sig=EZhv5lIzAEUc13UUgfExn92h%2BhGC4HBrBx8gLbcSILc%3D&ske=2024-06-11T20%3A29%3A07Z&skoid=ca7593d4-ee42-46cd-af88-8b886a2f84eb&sks=b&skt=2024-06-11T08%3A29%3A07Z&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skv=2023-11-03&sp=r&spr=https&sr=b&st=2024-06-11T10%3A22%3A53Z&sv=2023-11-03)
-- [apiCD.log](https://productionresultssa6.blob.core.windows.net/actions-results/ca0675db-67ec-45e6-a1b9-b650e1c4f46a/workflow-job-run-1c8ce01e-97de-5be9-a863-648419f09741/logs/job/job-logs.txt?rsct=text%2Fplain&se=2024-06-11T10%3A34%3A10Z&sig=tKnJG%2Fzb81CEVaTsEHp1bL0VnhHhJpdyMsetQwBeeHI%3D&ske=2024-06-11T21%3A43%3A10Z&skoid=ca7593d4-ee42-46cd-af88-8b886a2f84eb&sks=b&skt=2024-06-11T09%3A43%3A10Z&sktid=398a6654-997b-47e9-b12b-9515b896b4de&skv=2023-11-03&sp=r&spr=https&sr=b&st=2024-06-11T10%3A24%3A05Z&sv=2023-11-03)
+- [webCD.log](https://github.com/helloitsurdvq/VDT2024-webFrontend/blob/main/.github/workflows/webCD.log)
+- [apiCD.log](https://github.com/helloitsurdvq/VDT2024-api/blob/main/.github/workflows/apiCD.log)
 
 ArgoCD's history image when there are changes in web config repo and api config repo
 
