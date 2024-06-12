@@ -159,6 +159,7 @@ The result after successfully installing Minikube:
 Minikube ip: [http://192.168.49.2](http://192.168.49.2).
 ## 7. K8S helm chart
 ### ArgoCD
+First, set up the workspace for the ArgoCD
 ```shell
 kubectl create namespace argocd
 kubectl apply -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
