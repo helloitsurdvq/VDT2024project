@@ -378,3 +378,5 @@ If the limit is exceeded, the client will receive a `409 Conflict` response. Thi
 The outcome when testing on Postman:
 
 ![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/9.3_security_manyreqs.jpg)
+
+![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/9.4_security_manyreqs_log.png)
