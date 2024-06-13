@@ -271,7 +271,24 @@ This is the result when successfully deploy the web and api monitor service:
 => *Proposed solution*: Change the listening port for nginx to 8081. 
  
 ## 10. Logging
-(To be continued)
+The source code for fluentd setup can be found [here](https://github.com/helloitsurdvq/VDT2024project/tree/main/fluentd).
+
+First, use the Kubernetes DaemonSet to deploy fluentd to kubernetes
+```shell
+# Create namespace for logging
+kubectl apply -f 1-namespace.yaml
+
+# Create a service with the corresponding cluster role for fluentbit 
+kubectl apply -f 2-service.yaml
+
+# Create config map with configuration for DaemonSet when deploying fluentbit
+kubectl apply -f 3-configmap.yaml
+
+# Deploy fluentbit with DaemonSet for logging purpose
+kubectl apply -f 4-daemonset.yaml
+```
+
+Logging for web and api deployment: to be continued.
 ## 11. Security
 ### HAProxy Load balancer
 ```shell
