@@ -219,6 +219,10 @@ Output log of the CD workflow:
 - [webCD.log](https://github.com/helloitsurdvq/VDT2024-webFrontend/blob/main/.github/workflows/webCD.log)
 - [apiCD.log](https://github.com/helloitsurdvq/VDT2024-api/blob/main/.github/workflows/apiCD.log)
 
+Here is the web config repo and api config repo:
+- [web config](https://github.com/helloitsurdvq/VDT2024-web-config)
+- [api config](https://github.com/helloitsurdvq/VDT2024-api-config)
+
 ArgoCD's history image when there are changes in web config repo and api config repo:
 
 ![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/5.7_argo_diff_web.png)
@@ -240,20 +244,22 @@ ArgoCD's history image when there are changes in web config repo and api config 
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 # 2. Install Prometheus
 helm install prometheus prometheus-community/prometheus
-# 3. Install Prometheus Operator which will manage the Prometheus instances and configurations within the cluster
+# 3. Install Prometheus Operator which will manage the Prometheus instances 
 helm install prometheus-operator prometheus-community/kube-prometheus-stack
 # 4. Expose the Prometheus service
-kubectl expose service prometheus-server --type=NodePort --target-port=9090 --name=prometheus-server-ext
-# 5. Access the Prometheus UI
-minikube service prometheus-server-ext
+kubectl apply -f prometheus-operator/namespace.yaml 
+kubectl apply --server-side -f prometheus-operator/crds  
+kubectl apply --server-side -f prometheus-operator/rbac  
+kubectl apply  -f prometheus
 ```
 The outcome of the Prometheus setup:
 
-![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/7.1_prometheus_ui.jpg)
+![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/7.1_prometheus_ui.png)
 
-Prometheus website is set up at [http://192.168.49.2:31892](http://192.168.49.2:31892).
+Prometheus website is set up at [http://192.168.49.2:32694](http://192.168.49.2:32694).
 
-![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/7.2_prometheus_link.jpg)
+This is the result when successfully deploy the api monitor service:
+![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/7.3_prometheus_deploy.png)
 ## 10. Logging
 (To be continued)
 ## 11. Security
