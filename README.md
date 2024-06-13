@@ -229,6 +229,12 @@ ArgoCD's history image when there are changes in web config repo and api config 
 
 ![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/5.8_argo_diff_api.png)
 
+CD demo result for web and api service when create a new tag:
+
+![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/6.3_cd_result_web.png)
+
+![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/6.4_cd_result_api.png)
+
 ## 9. Monitoring
 **Overview**: Prometheus is an open-source monitoring and alerting toolkit, which is designed for reliability and scalability. By using the Prometheus Operator, we can simplify the deployment and management of Prometheus in a Kubernetes cluster.
 
