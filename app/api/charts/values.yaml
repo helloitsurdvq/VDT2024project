@@ -1,3 +1,12 @@
+appName: api
+
+namespace: api
+
+configmap:
+  name: myhelmapp-configmap-v1
+  data:
+    CUSTOM_HEADER: 'This app was deployed with helm!'
+
 image:
   repository: helloitsurdvq/api
   tag: latest

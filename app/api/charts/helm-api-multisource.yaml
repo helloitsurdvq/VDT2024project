@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: api
+  namespace: argocd
+spec:
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: api
+  sources:
+    - repoURL: https://github.com/helloitsurdvq/VDT2024-api
+      path: charts
+      targetRevision: HEAD
+      helm:
+        valueFiles:
+          - $values/values.yaml
+    - repoURL: 'https://github.com/helloitsurdvq/VDT2024-api-config'
+      targetRevision: HEAD
+      ref: values

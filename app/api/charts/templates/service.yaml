@@ -1,12 +1,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Chart.Name }}
+  name: {{ .Values.appName }}
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: {{ .Values.appName }}
 spec:
-  type: NodePort
   ports:
   - port: 3000
-    targetPort: 3000
-    nodePort: {{ .Values.service.nodePort }}
+    protocol: TCP
+    name: nodejs
   selector:
-    app: {{ .Chart.Name }}
+    app: {{ .Values.appName }}
+  type: NodePort

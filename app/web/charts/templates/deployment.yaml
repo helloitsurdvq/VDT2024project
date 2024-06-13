@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Chart.Name }}
+  namespace: {{ .Values.namespace }}
   labels:
     app: {{ .Chart.Name }}
 spec:
@@ -18,4 +19,7 @@ spec:
       - name: {{ .Chart.Name }}
         image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
         ports:
-        - containerPort: 80
+        - name: http
+          containerPort: 80
+        - name: http-metrics
+          containerPort: 8081

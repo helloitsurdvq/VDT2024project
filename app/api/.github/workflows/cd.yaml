@@ -1,0 +1,61 @@
+name: CD 
+ 
+on:
+  push:
+    tags:
+      - '*'
+ 
+jobs:
+  build-and-deploy:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+ 
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+ 
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+ 
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
+ 
+      - name: Extract tag name
+        id: extract_tag
+        run: echo "TAG=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+ 
+      - name: Build and push Docker image
+        run: |
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/api:${{ env.TAG }} .
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/api:${{ env.TAG }}
+ 
+      - name: Checkout config repository
+        uses: actions/checkout@v3
+        with:
+          repository: helloitsurdvq/VDT2024-api-config
+          token: ${{ secrets.GITHUB_TOKEN }}
+          path: .
+
+      - name: Commit and push changes
+        run: |
+          git clone https://user:$GITHUB_TOKEN@github.com/helloitsurdvq/VDT2024-api-config
+          cd VDT2024-api-config
+ 
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'vietquang16012003@gmail.com'
+ 
+          sed -i "s/^  tag: .*/  tag: ${{ env.TAG }}/" values.yaml
+ 
+          git add values.yaml
+          git commit -m "Update image version to ${{ env.TAG }}"
+
+          git remote -v
+ 
+          git push --set-upstream origin main
+          git push --set-upstream https://user:$GITHUB_TOKEN@github.com/helloitsurdvq/VDT2024-api-config main
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}

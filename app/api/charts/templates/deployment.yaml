@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Chart.Name }}
+  namespace: {{ .Values.namespace }}
   labels:
     app: {{ .Chart.Name }}
 spec:
@@ -18,7 +19,10 @@ spec:
       - name: {{ .Chart.Name }}
         image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
         ports:
-        - containerPort: 3000
+        - name: http
+          containerPort: 3000
+        - name: http-metrics
+          containerPort: 3000
         env:
         - name: MONGODB_URI
           value: "mongodb+srv://root:hello123@vdt.2w2zlck.mongodb.net/?retryWrites=true&w=majority&appName=vdt"

@@ -1,3 +1,12 @@
+appName: web
+
+namespace: web
+
+configmap:
+  name: myhelmapp-configmap-v1
+  data:
+    CUSTOM_HEADER: 'This app was deployed with helm!'
+
 image:
   repository: helloitsurdvq/web
   tag: latest
