@@ -291,6 +291,7 @@ kubectl apply -f 4-daemonset.yaml
 Logging for web and api deployment: to be continued.
 ## 11. Security
 ### HAProxy Load balancer
+The first thing to do is create a Self-Signed Certificate to use https instead of http 
 ```shell
 # Generate a Self-Signed Certificate
 openssl req -x509 -newkey rsa:2048 -nodes -keyout example.com.key -out example.com.crt -days 365
