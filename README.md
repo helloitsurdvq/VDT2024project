@@ -238,6 +238,11 @@ ArgoCD's history image when there are changes in web config repo and api config 
 - helm package manager installed.
 - minikube for local Kubernetes development (optional).
 
+**Set up source code**
+
+- [prometheus](https://github.com/helloitsurdvq/VDT2024project/tree/main/prometheus)
+- [prometheus-operator](https://github.com/helloitsurdvq/VDT2024project/tree/main/prometheus-operator)
+
 **Deployment steps**
 ```shell
 # 1. Add the Prometheus Helm Repository
@@ -258,8 +263,13 @@ The outcome of the Prometheus setup:
 
 Prometheus website is set up at [http://192.168.49.2:32694](http://192.168.49.2:32694).
 
-This is the result when successfully deploy the api monitor service:
+This is the result when successfully deploy the web and api monitor service:
 ![img](https://raw.githubusercontent.com/helloitsurdvq/VDT2024project/main/assets/7.3_prometheus_deploy.png)
+
+*Note*: Since the default port for nginx web service is 80, and I switched the metrics port to 8081, it caused the downgrade for web service monitor on Prometheus.
+
+=> *Proposed solution*: Change the listening port for nginx to 8081. 
+ 
 ## 10. Logging
 (To be continued)
 ## 11. Security
