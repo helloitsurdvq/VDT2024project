@@ -28,11 +28,11 @@ data:
     [OUTPUT]
         Name        es
         Match       *
-        Host        116.103.226.146
+        Host        192.168.49.2
         Port        9200
         HTTP_User   elastic
         HTTP_Passwd iRsUoyhqW-CyyGdwk6V_
-        Index       baohb_0983155487
+        Index       quangdv_0869963453
         Logstash_Format On
         Logstash_Prefix app-logs
         Retry_Limit False
