@@ -5,7 +5,7 @@ all:
       hostname: vietquang
       ansible_connection: local
       ansible_become_user: root
-      ansible_become_password: hikari16012003haha # enter password here
+      ansible_become_password: hello123 # enter password here
 
     hosttestusr1:
       hostname: testusr1
